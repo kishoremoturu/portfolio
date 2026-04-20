@@ -353,11 +353,7 @@ export default function SaiKishorePortfolio() {
 
         <section id="about" className="py-24">
           <div className={sectionWrap}>
-            <SectionTitle
-              index="01"
-              title="About Me"
-              subtitle="A concise introduction, similar to the reference portfolio's clean personal summary section."
-            />
+            <SectionTitle index="01" title="About Me" />
             <div className="grid gap-10 md:grid-cols-[1.1fr_0.9fr]">
               <div>
                 <p className="text-base leading-8 text-slate-400">
@@ -403,11 +399,7 @@ export default function SaiKishorePortfolio() {
 
         <section id="experience" className="border-y border-slate-800 py-24">
           <div className={sectionWrap}>
-            <SectionTitle
-              index="02"
-              title="Experience"
-              subtitle="A cleaner timeline-based presentation to better mirror the structure of the reference portfolio."
-            />
+            <SectionTitle index="02" title="Experience" />
             <div className="relative ml-1 border-l border-slate-800">
               {experience.map((item) => (
                 <div key={`${item.company}-${item.role}`} className="mb-8 last:mb-0">
@@ -420,11 +412,7 @@ export default function SaiKishorePortfolio() {
 
         <section id="projects" className="py-24">
           <div className={sectionWrap}>
-            <SectionTitle
-              index="03"
-              title="Projects"
-              subtitle="Selected work presented in a cleaner, simpler card style rather than heavy dashboard panels."
-            />
+            <SectionTitle index="03" title="Projects" />
             <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
               {projects.map((project) => (
                 <ProjectCard key={project.title} project={project} />
@@ -435,11 +423,7 @@ export default function SaiKishorePortfolio() {
 
         <section id="skills" className="border-y border-slate-800 py-24">
           <div className={sectionWrap}>
-            <SectionTitle
-              index="04"
-              title="Skills"
-              subtitle="A flatter pill-based layout that feels closer to a modern portfolio rather than a product landing page."
-            />
+            <SectionTitle index="04" title="Skills" />
             <div className="flex flex-wrap gap-3">
               {skills.map((skill) => (
                 <SkillPill key={skill.name} label={skill.name} icon={skill.icon} />
@@ -483,11 +467,7 @@ export default function SaiKishorePortfolio() {
 
         <section id="contact" className="border-t border-slate-800 py-24">
           <div className={sectionWrap}>
-            <SectionTitle
-              index="07"
-              title="Get In Touch"
-              subtitle="Simple closing section with direct ways to connect."
-            />
+            <SectionTitle index="07" title="Get In Touch" />
             <div className="rounded-[2rem] border border-slate-800 bg-slate-900/60 p-8 md:p-10">
               <h3 className="text-2xl font-semibold text-white">Let's build something meaningful.</h3>
               <p className="mt-4 max-w-2xl text-base leading-8 text-slate-400">
