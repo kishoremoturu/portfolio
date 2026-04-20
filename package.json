@@ -1,8 +1,19 @@
 {
-  "name": "portfolio-runner",
-  "private": true,
+  "name": "portfolio",
+  "private": false,
   "version": "1.0.0",
+  "description": "Sai Kishore Moturu portfolio website built with React and Vite",
+  "author": "Sai Kishore Moturu",
+  "license": "MIT",
   "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kishoremoturu/portfolio.git"
+  },
+  "homepage": "https://kishoremoturu.github.io/portfolio/",
+  "engines": {
+    "node": ">=20"
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",
