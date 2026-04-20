@@ -2,10 +2,9 @@
   "name": "portfolio",
   "private": false,
   "version": "1.0.0",
-  "description": "Sai Kishore Moturu portfolio website built with React and Vite",
+  "description": "Sai Kishore Moturu portfolio website built with Create React App",
   "author": "Sai Kishore Moturu",
   "license": "MIT",
-  "type": "module",
   "repository": {
     "type": "git",
     "url": "https://github.com/kishoremoturu/portfolio.git"
@@ -15,16 +14,28 @@
     "node": ">=20"
   },
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
   },
   "dependencies": {
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-icons": "^5.6.0"
+    "react-icons": "^5.6.0",
+    "react-scripts": "^5.0.1"
   },
-  "devDependencies": {
-    "vite": "^5.4.19"
+  "devDependencies": {},
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }

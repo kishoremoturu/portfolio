@@ -1,11 +1,11 @@
 # Portfolio
 
-A modern React portfolio site for Sai Kishore Moturu, built with Vite and deployed through GitHub Pages.
+A modern React portfolio site for Sai Kishore Moturu, built with Create React App and deployed through GitHub Pages.
 
 ## Tech Stack
 
 - React 18
-- Vite 5
+- Create React App (react-scripts 5)
 - Tailwind CSS (CDN)
 - React Icons
 
@@ -22,7 +22,7 @@ npm install
 
 ### Run Locally
 
-npm run dev
+npm start
 
 ### Production Build
 
@@ -30,16 +30,16 @@ npm run build
 
 ### Preview Production Build
 
-npm run preview
+Serve the `build` folder with any static server.
 
 ## Project Structure
 
 .github/workflows/ - CI and deployment workflows
 src/ - React source code
-src/main.jsx - React entry point
+src/index.js - React entry point
+src/App.js - app wrapper component
 src/Portfolio.jsx - main portfolio component
-index.html - app shell
-vite.config.js - Vite configuration for GitHub Pages
+public/index.html - app shell
 
 ## Deployment
 
