@@ -32,27 +32,48 @@ const profile = {
   phone: "+91-8374446799",
   github: "https://github.com/kishoremoturu",
   linkedin: "https://www.linkedin.com/in/kishoremoturu/",
+  resume: "https://drive.google.com/file/d/1_OFJep2137aMiV-tWgLCeWprDBO7_Ve5/view?usp=drive_link",
 };
 
-const skills = [
-  { name: "Python", icon: SiPython },
-  { name: "C", icon: SiC },
-  { name: "C++", icon: SiCplusplus },
-  { name: "JavaScript", icon: SiJavascript },
-  { name: "React.js", icon: SiReact },
-  { name: "Node.js", icon: SiNodedotjs },
-  { name: "Express.js", icon: SiExpress },
-  { name: "Flask", icon: SiFlask },
-  { name: "FastAPI", icon: SiFastapi },
-  { name: "MongoDB", icon: SiMongodb },
-  { name: "MySQL", icon: SiMysql },
-  { name: "SQLite", icon: SiSqlite },
-  { name: "AWS", icon: FaAws },
-  { name: "Git", icon: SiGit },
-  { name: "GitHub", icon: SiGithub },
-  { name: "Pandas", icon: SiPandas },
-  { name: "NumPy", icon: SiNumpy },
-  { name: "Tailwind CSS", icon: SiTailwindcss },
+const skillSections = [
+  {
+    title: "Programming Languages",
+    skills: [
+      { name: "Python", icon: SiPython },
+      { name: "C", icon: SiC },
+      { name: "C++", icon: SiCplusplus },
+      { name: "JavaScript", icon: SiJavascript },
+    ],
+  },
+  {
+    title: "Frameworks & Libraries",
+    skills: [
+      { name: "React.js", icon: SiReact },
+      { name: "Node.js", icon: SiNodedotjs },
+      { name: "Express.js", icon: SiExpress },
+      { name: "Flask", icon: SiFlask },
+      { name: "FastAPI", icon: SiFastapi },
+      { name: "Pandas", icon: SiPandas },
+      { name: "NumPy", icon: SiNumpy },
+      { name: "Tailwind CSS", icon: SiTailwindcss },
+    ],
+  },
+  {
+    title: "Databases",
+    skills: [
+      { name: "MongoDB", icon: SiMongodb },
+      { name: "MySQL", icon: SiMysql },
+      { name: "SQLite", icon: SiSqlite },
+    ],
+  },
+  {
+    title: "Tools & Technologies",
+    skills: [
+      { name: "AWS", icon: FaAws },
+      { name: "Git", icon: SiGit },
+      { name: "GitHub", icon: SiGithub },
+    ],
+  },
 ];
 
 const experience = [
@@ -116,7 +137,11 @@ function runDataChecks() {
   assert(profile.name, "Profile name is required.");
   assert(Array.isArray(projects) && projects.length > 0, "At least one project is required.");
   assert(Array.isArray(experience) && experience.length > 0, "At least one experience item is required.");
-  assert(Array.isArray(skills) && skills.length > 0, "At least one skill is required.");
+  assert(Array.isArray(skillSections) && skillSections.length > 0, "At least one skill section is required.");
+  skillSections.forEach((section, sectionIndex) => {
+    assert(section.title, `Skill section ${sectionIndex + 1} is missing a title.`);
+    assert(Array.isArray(section.skills) && section.skills.length > 0, `Skill section ${section.title} is empty.`);
+  });
   projects.forEach((project, index) => {
     assert(project.title, `Project ${index + 1} is missing a title.`);
     assert(project.description, `Project ${project.title} is missing a description.`);
@@ -362,6 +387,14 @@ export default function SaiKishorePortfolio() {
                 <p className="mt-6 text-base leading-8 text-slate-400">
                   I'm especially interested in roles where I can work on scalable systems, web platforms, AI-assisted products, and performance-focused engineering problems.
                 </p>
+                <a
+                  href={profile.resume}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="mt-8 inline-flex items-center rounded-full border border-teal-400 px-5 py-2.5 text-sm font-medium text-teal-300 transition hover:bg-teal-400 hover:text-slate-950"
+                >
+                  Resume
+                </a>
               </div>
               <div className="grid gap-4">
                 {[
@@ -424,9 +457,16 @@ export default function SaiKishorePortfolio() {
         <section id="skills" className="border-y border-slate-800 py-24">
           <div className={sectionWrap}>
             <SectionTitle index="04" title="Skills" />
-            <div className="flex flex-wrap gap-3">
-              {skills.map((skill) => (
-                <SkillPill key={skill.name} label={skill.name} icon={skill.icon} />
+            <div className="grid gap-8 md:grid-cols-2">
+              {skillSections.map((section) => (
+                <div key={section.title}>
+                  <h3 className="mb-4 text-sm font-semibold uppercase tracking-[0.18em] text-teal-400">{section.title}</h3>
+                  <div className="flex flex-wrap gap-3">
+                    {section.skills.map((skill) => (
+                      <SkillPill key={skill.name} label={skill.name} icon={skill.icon} />
+                    ))}
+                  </div>
+                </div>
               ))}
             </div>
           </div>
