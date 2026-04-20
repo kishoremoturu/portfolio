@@ -47,15 +47,3 @@ Deployment is handled by GitHub Actions via the workflow in .github/workflows/de
 
 Published URL:
 https://kishoremoturu.github.io/portfolio/
-
-## Contributing
-
-Please read CONTRIBUTING.md before opening pull requests.
-
-## Security
-
-If you discover a vulnerability, see SECURITY.md.
-
-## License
-
-This project is licensed under the MIT License. See LICENSE for details.
